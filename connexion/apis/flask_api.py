@@ -279,7 +279,13 @@ class InternalHandlers(object):
 
         :return:
         """
-        return flask.render_template('index.html', api_url=self.base_path)
+        oauth_options = dict(
+            oauth_client_id=self.options.openapi_console_ui_oauth_client_id,
+            oauth_client_secret=self.options.openapi_console_ui_oauth_client_secret,
+            oauth_realm=self.options.openapi_console_ui_oauth_realm,
+            oauth_app_name=self.options.openapi_console_ui_oauth_app_name,
+        )
+        return flask.render_template('index.html', api_url=self.base_path, **oauth_options)
 
     def console_ui_static_files(self, filename):
         """
