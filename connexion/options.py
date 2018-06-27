@@ -73,6 +73,26 @@ class ConnexionOptions(object):
         """
         return self._options.get('swagger_path', INTERNAL_CONSOLE_UI_PATH)
 
+    @property
+    def openapi_console_ui_oauth_client_id(self):
+        # type: () -> str
+        return self._options.get('oauth_client_id', "")
+
+    @property
+    def openapi_console_ui_oauth_client_secret(self):
+        # type: () -> str
+        return self._options.get('oauth_client_secret', "")
+
+    @property
+    def openapi_console_ui_oauth_realm(self):
+        # type: () -> str
+        return self._options.get('oauth_realm', "")
+
+    @property
+    def openapi_console_ui_oauth_app_name(self):
+        # type: () -> str
+        return self._options.get('oauth_app_name', "")
+
 
 def filter_values(dictionary):
     # type: (dict) -> dict
